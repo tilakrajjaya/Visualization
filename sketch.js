@@ -16,8 +16,14 @@ function heuristic(a, b) {
 }
 
 function NoSol() {
-  document.getElementsByClassName('sol')[0].
-  style.visibility = 'visible';
+  document.getElementById("sol").style.background = "#ff6347";
+  document.getElementById("sol").style.visibility = 'visible';
+}
+
+function Sol() {
+  document.getElementById("sol").style.background = "#4CAF50";
+  document.getElementById("ans").innerHTML = "Shortest Path found";
+  document.getElementById("sol").style.visibility = 'visible';
 }
 
 // How many columns and rows?
@@ -92,6 +98,7 @@ function draw() {
     // Did I finish?
     if (current === end) {
       noLoop();
+      Sol();
       console.log('DONE!');
     }
 
